@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { render } from '@testing-library/react'
 import { fetchMock } from './mock/fetch'
+import { head } from 'cypress/types/lodash'
 
 const { App } = (await import('../src/App')) as { App: React.ComponentType<{}> }
 
@@ -14,3 +15,4 @@ describe('Station No.1', () => {
     expect(container).toBeTruthy()
   })
 })
+
