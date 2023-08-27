@@ -11,12 +11,17 @@ export const App = () => {
   const [dogUrl,setDogUrl] = useState('https://images.dog.ceo/breeds/african/n02116738_4019.jpg')
   return (
   <div>
-    <header>
+    <header className='{header}'>
       <h1>testDog</h1>
     </header>
     <h3>犬の画像を表示するサイトです</h3>
     <img src = {dogUrl}/>
-    <button onClick={()=>setDogUrl('https://images.dog.ceo/breeds/bulldog-french/n02108915_2279.jpg')}>更新</button>
+    <button onClick={()=>fetch("https://dog.ceo/api/breeds/image/random")
+    .then((res) => res.json())
+    // .then((json) => console.log(json.message))
+    .then((json) => setDogUrl(json.message))}>更新</button>
   </div>
   );
 }
+
+// setDogUrl('https://images.dog.ceo/breeds/bulldog-french/n02108915_2279.jpg')
