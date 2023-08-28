@@ -14,7 +14,7 @@ export const App = () => {
   return (
   <div>
     <Header/>
-
+    <Description/>
     <img src = {dogUrl}/>
     <button onClick={()=>fetch("https://dog.ceo/api/breeds/image/random")
     .then((res) => res.json())
