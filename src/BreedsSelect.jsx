@@ -1,15 +1,19 @@
 // @ts-check
 
-export const BreedsSelect = props => {
-  console.log(props.breeds)
+export const BreedsSelect = (props) => {
+  // console.log(props.breeds)
+  const selectedBreed = props.selectedBreed
+  const onChange = props.onChange
+  const breedList = props.breeds.map((breed) =>
+    <option value={breed} key={breed}>{breed}</option>
+  )
   return(
   <div id="select_div">
-    <select id="select">
-      <option value="grapefruit">Grapefruit</option>
-      <option value="lime">Lime</option>
-      <option selected value="coconut">Coconut</option>
-      <option value="mango">Mango</option>
+    <p>breeds List</p>
+    <select id="select" value={selectedBreed} onChange={onChange}>
+      {breedList}
     </select>
+
   </div>
   )
 }
